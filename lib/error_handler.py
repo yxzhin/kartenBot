@@ -1,11 +1,31 @@
 
 
-import traceback
-import sys
-from lib.yaf_honeylib10 import getTime
-from discord.ext import commands
-from discord.ext.commands import Context
+# //made by @yxzhin with <3
+# //#hellokittysupremacy #finelcomeback #yxzhinsave
+
+
 from lib.error_getter import error_getter
+from discord.ext.commands import Context
+from discord.ext import commands
+from lib.yaf_honeylib10 import getTime
+import sys
+import traceback
+from discord.ext.commands import Cog, guild_only, command, Context, Bot
+
+
+class Command(Cog):
+
+    def __init__(self, bot: Bot):
+
+        self.__cog_name__ = ""
+
+        self.bot = bot
+
+    @guild_only()
+    @command(aliases=[""])
+    async def __(self, ctx: Context):
+
+        ...
 
 
 class ErrorHandler(commands.Cog):

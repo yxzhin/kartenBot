@@ -2,21 +2,23 @@
 
 prefix = "-"
 token = ""
-secret = ""
 
-commands = [
-    "misc.help",
-]
+api_url = "http://localhost:5000"
+secret = ""
 
 owner_ids = [
     1320830266373177364,
 ]
 
+commands = [
+    "misc.help", "main.deck", "misc.ping", "misc.credits",
+]
+
 help_text = {
 
-    "1": "1",
-    "2": "2",
-    "3": "3",
-    "4": "4",
+    "help": "показывает это сообщение",
+    "deck <id>": "получить колоду карт по айди",
+    "ping": "проверить скорость ответа бота",
+    "credits": "разработчики бота",
 
 }

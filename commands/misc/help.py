@@ -5,7 +5,7 @@
 
 
 from discord.ext.commands import Cog, guild_only, command, Context, Bot
-from discord.ui import View, button, Button
+from discord.ui import View, Button
 from discord import ButtonStyle, Color, Message, Interaction
 from lib.yaf_honeylib10 import emb
 from config.conf import prefix, help_text
@@ -14,12 +14,11 @@ from lib.error_getter import error_getter
 
 class Command(Cog):
 
-    def __init__(self, bot: Bot, __globals: dict):
+    def __init__(self, bot: Bot):
 
         self.__cog_name__ = "Help"
 
         self.bot = bot
-        self.__globals = __globals
 
         self.pages = dict()
 
@@ -43,11 +42,11 @@ class Command(Cog):
 
             return interaction.user == ctx.author and interaction.channel == ctx.channel
 
-        def back_callback(interaction):
+        async def back_callback(interaction: Interaction):
 
             self.pages[ctx.author.id] -= 1
 
-        def next_callback(interaction):
+        async def next_callback(interaction: Interaction):
 
             self.pages[ctx.author.id] += 1
 

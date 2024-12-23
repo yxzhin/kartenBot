@@ -30,7 +30,7 @@ def main():
         for command in config.commands:
 
             await bot.add_cog(import_module(
-                f"commands.{command}").Command(bot, __globals))
+                f"commands.{command}").Command(bot))
             print(f"loaded command: {command}")
 
         await bot.change_presence(status=Status.online, activity=Activity(type=ActivityType.listening, name="вас, молодой человек."))
